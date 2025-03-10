@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Farming Information Portal</title>
+    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="pinl logo.png" alt="Silk Farming Logo" class="logo">
+        
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="guide.html">Silk Farming Guide</a></li>
+                <li><a href="image.html">Image Gallery</a></li>
+                <li><a href="news.html">News & Updates</a></li>
+                <li><a href="weather.html">Weather & Season Info</a></li>
+                <li><a href="prices.html">Market Prices</a></li>
+                <li><a href="discussion.html">Discussion Forum</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+     <section>
+        <h3>Image Gallery</h3>
+        <div id="image-gallery">
+            <div class="gallery-container">
+                <img src="silk1.jpeg" alt="Mulberry Cultivation">
+                <img src="silk2.jpeg" alt="Silkworm Rearing">
+                <img src="silk3.jpeg" alt="Cocoon Production">
+                <img src="silk4.jpeg" alt="Pest Control">
+
+                <!-- Duplicated images for seamless scroll -->
+                <img src="silk1.jpeg" alt="Mulberry Cultivation">
+                <img src="silk2.jpeg" alt="Silkworm Rearing">
+                <img src="silk3.jpeg" alt="Cocoon Production">
+                <img src="silk4.jpeg" alt="Pest Control">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Welcome to the Silk Farming Portal!</h2>
+        <p>Your one-stop solution for all silk farming information and resources.</p>
+        <ul>
+            <li>Access detailed guides on silk farming techniques and practices.</li>
+            <li>Stay updated with the latest news and government schemes for silk farmers.</li>
+            <li>Check real-time weather updates and seasonal recommendations.</li>
+            <li>Monitor daily market prices for silk cocoons and raw silk.</li>
+            <li>Engage with a community of fellow farmers in our discussion forum.</li>
+            <li>Get personalized support through our dedicated contact center.</li>
+        </ul>
+    </section>
+    
+    <section>
+        <h3>Announcements</h3>
+        <ul>
+            <li>New subsidy for silk farmers in 2024!</li>
+            <li>Upcoming training on silkworm rearing techniques on January 15th.</li>
+            <li>Government collaboration to promote eco-friendly silk production.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>About the Portal</h3>
+        <p>This portal is designed to provide silk cocoon rearing farmers with up-to-date information on silk farming, including best practices, market trends, and government policies.</p>
+    </section>
+
+    <section>
+        <h3>Featured Articles</h3>
+        <ul>
+            <li><strong>Silkworm Life Cycle:</strong> A comprehensive guide to understanding the life stages of silkworms.</li>
+            <li><strong>Innovative Mulberry Cultivation:</strong> Tips for maximizing yield and maintaining soil health.</li>
+            <li><strong>Pest Management in Sericulture:</strong> Effective strategies for controlling common pests.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Contact & Support</h3>
+        <p>If you have any questions or need assistance, feel free to reach out to us.</p>
+        <p>Email: support@silkfarmingportal.com | Phone: +123-456-7890</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Silk Farming Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const galleryContainer = document.querySelector('.gallery-container');
+        let scrollAmount = 0;
+        const galleryWidth = galleryContainer.scrollWidth / 2; // Half the width since we duplicated images
+
+        function autoScrollGallery() {
+            scrollAmount += 1; // Adjust the speed of scrolling by changing this value
+
+            // When the scroll reaches the middle (end of original set), reset to the start
+            if (scrollAmount >= galleryWidth) {
+                scrollAmount = 0;
+            }
+
+            galleryContainer.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+
+        setInterval(autoScrollGallery, 20); // Controls the smoothness and speed of scrolling
+    </script>
+</body>
+</html>

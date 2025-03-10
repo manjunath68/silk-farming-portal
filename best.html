@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Farming Best Practices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header, .footer {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .section h2 {
+            cursor: pointer;
+            color: #007bff;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #228b22;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button a:hover {
+            background-color: #228b22;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Move translation dropdown to the top-right */
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Hide the Google Translate icon */
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* Increase dropdown size */
+.goog-te-gadget select {
+    font-size: 18px !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Best Practices</h1>
+        
+        <div id="google_translate_element"></div>
+
+<div id="google_translate_element"></div>
+
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,kn,te,ta,ml', // Added Tamil (ta) and Malayalam (ml)
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+
+    <div class="container">
+        <h1>Silk Farming Best Practices</h1>
+        <input type="text" class="search-box" placeholder="Search best practices..." onkeyup="searchPractices()">
+        
+        <div class="section">
+            <h2 onclick="toggleContent(this)">1. Mulberry Cultivation</h2>
+            <div class="content">Mulberry is the primary food for silkworms. Choose high-yielding varieties suitable for your region. Ensure proper soil fertility by adding organic manure and fertilizers. Regular pruning and irrigation improve leaf quality, essential for silkworm nutrition.</div>
+        </div>
+        
+        <div class="section">
+            <h2 onclick="toggleContent(this)">2. Silkworm Rearing</h2>
+            <div class="content">Rearing silkworms requires a clean, hygienic environment. Maintain optimal temperature (24-28°C) and humidity (70-85%) for healthy growth. Ensure proper ventilation in rearing houses and provide fresh mulberry leaves regularly to maximize cocoon yield.</div>
+        </div>
+        
+        <div class="section">
+            <h2 onclick="toggleContent(this)">3. Cocoon Harvesting</h2>
+            <div class="content">Harvest cocoons at the right stage, usually five days after spinning is complete. Avoid exposure to excess moisture, which can reduce cocoon quality. Store cocoons in a well-ventilated area to prevent spoilage and ensure better silk yield.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">4. Disease Control</h2>
+            <div class="content">Regular monitoring of silkworms is crucial to prevent diseases like pebrine and flacherie. Use disinfectants in rearing houses, maintain hygiene, and ensure proper waste disposal. Isolate infected worms to prevent the spread of diseases.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">5. Proper Feeding</h2>
+            <div class="content">Silkworms require fresh, high-quality mulberry leaves at the right intervals. Avoid feeding them with stale or low-nutrient leaves, as this affects their growth and cocoon production. Follow a strict feeding schedule for best results.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">6. Optimal Rearing Environment</h2>
+            <div class="content">Silkworms thrive in a controlled environment. Keep rearing houses clean, well-ventilated, and free from direct sunlight. Use bamboo trays or racks for rearing to ensure uniform growth and minimize stress on the worms.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">7. Egg Incubation</h2>
+            <div class="content">Silkworm eggs must be incubated under controlled temperature and humidity conditions. Store them in dark, cool places until hatching. Proper incubation ensures a high hatching rate and leads to uniform silkworm development.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">8. Waste Management</h2>
+            <div class="content">Silkworm rearing produces a significant amount of waste. Regularly clean and dispose of silkworm litter to prevent contamination. Convert waste into compost for mulberry cultivation, promoting a sustainable farming cycle.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">9. Harvesting and Storage</h2>
+            <div class="content">Handle cocoons carefully during harvesting to avoid damage. Dry them properly before storage to prevent fungal growth. Properly stored cocoons yield better-quality silk and fetch higher prices in the market.</div>
+        </div>
+
+        <div class="section">
+            <h2 onclick="toggleContent(this)">10. Market Awareness</h2>
+            <div class="content">Stay informed about market trends, government schemes, and buyer demands. Establish connections with silk traders and cooperatives to get the best price for cocoons. Selling at the right time maximizes profitability.</div>
+        </div>
+    </div>
+
+    <div class="back-button">
+        <a href="main.html" title="Back to Home">
+            <i class="fas fa-arrow-left"></i> Back
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Silk Farming Guide. All rights reserved.</p>
+    </div>
+
+    <script>
+        function toggleContent(element) {
+            let content = element.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function searchPractices() {
+            let input = document.querySelector('.search-box').value.toLowerCase();
+            let sections = document.querySelectorAll('.section');
+            
+            sections.forEach(section => {
+                let title = section.querySelector('h2').innerText.toLowerCase();
+                section.style.display = title.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Farming Chatbot</title>
+
+    <div id="google_translate_element"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+             new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,kn,te,ta,ml', // Added Tamil (ta) and Malayalam (ml)
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('D.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        header {
+            width: 100%;
+            background: green;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav {
+            width: 100%;
+            background: #444;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            z-index: 999;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .chat-container {
+            width: 320px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-top: 100px;
+            padding: 10px;
+        }
+        .chatbox {
+            height: 400px;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+        }
+        .user, .bot {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user {
+            background-color: #d1e7dd;
+            align-self: flex-end;
+        }
+        .bot {
+            background-color: #d4edda;
+            align-self: flex-start;
+            color: green; /* ✅ Bot messages in green */
+        }
+        .suggestions {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+        }
+        .suggestion {
+            padding: 8px 12px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .suggestion:hover {
+            background: #0056b3;
+        }
+        /* Move translation dropdown to the top-right */
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Hide the Google Translate icon */
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* Increase dropdown size */
+.goog-te-gadget select {
+    font-size: 18px !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.back-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .back-button a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            background-color: #228b22;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button a:hover {
+            background-color: #228b22;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Silk Farming Chatbot</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="best-practices.html">Best Practices</a>
+        <a href="market-prices.html">Market Prices</a>
+        <a href="schemes.html">Schemes</a>
+    </nav>
+    <div class="chat-container">
+        <div class="chatbox" id="chatbox"></div>
+        <div class="suggestions" id="suggestions"></div>
+    </div>
+
+    <div class="back-button">
+        <a href="main.html">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Silk Farming. All rights reserved.</p>
+    </div>
+    
+    <script>
+        const chatbox = document.getElementById("chatbox");
+        const suggestionsBox = document.getElementById("suggestions");
+        
+        const responses = [
+            { question: "What is silk?", response: "Silk is a natural fiber produced by silkworms, mainly used for textiles." },
+            { question: "History of silk?", response: "Silk production began over 5,000 years ago in ancient China." },
+            { question: "What is silk farming?", response: "Silk farming (sericulture) is the cultivation of silkworms for silk production." },
+            { question: "Types of silkworms?", response: "Mulberry, Tasar, Eri, and Muga are the main silkworm types." },
+            { question: "Life cycle of silkworm?", response: "Silkworms go through 4 stages: egg, larva, pupa, and adult moth." },
+            { question: "Ideal temperature for silkworms?", response: "Silkworms thrive at 20-30°C with 70-80% humidity." },
+            { question: "Best practices for cocoon rearing?", response: "Maintain proper temperature, humidity, and hygiene for healthy cocoons." },
+            { question: "Current market price for silk?", response: "Silk prices vary. Check local markets or online platforms for updates." },
+            { question: "Where to sell silk cocoons?", response: "Sell silk cocoons at local silk markets, cooperatives, or online platforms." },
+            { question: "Government schemes for silk farmers?", response: "Government schemes provide financial aid, training, and subsidies." }
+        ];
+
+        function sendMessage(userText, botResponse) {
+            appendMessage("user", userText);
+            setTimeout(() => {
+                appendMessage("bot", botResponse);
+                showSuggestions();
+            }, 500);
+        }
+
+        function appendMessage(sender, message) {
+            let msgDiv = document.createElement("div");
+            msgDiv.classList.add(sender);
+            msgDiv.textContent = message;
+            chatbox.appendChild(msgDiv);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        function showSuggestions() {
+            suggestionsBox.innerHTML = "";
+            let selectedSuggestions = responses.sort(() => 0.5 - Math.random()).slice(0, 3);
+            
+            selectedSuggestions.forEach(item => {
+                let btn = document.createElement("button");
+                btn.classList.add("suggestion");
+                btn.textContent = item.question;
+                btn.onclick = () => sendMessage(item.question, item.response);
+                suggestionsBox.appendChild(btn);
+            });
+        }
+
+        showSuggestions(); // Show initial suggestions when the chatbot loads
+    </script>
+</body>
+</html>

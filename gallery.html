@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Farming Gallery</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; margin: 0; }
+        .header { background: #333; color: white; padding: 15px 0; }
+        .nav { display: flex; justify-content: center; gap: 20px; }
+        .nav a { color: white; text-decoration: none; font-size: 18px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; padding: 20px; }
+        .gallery img { 
+            width: 200px; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .gallery img:hover { 
+            transform: scale(1.1); 
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+        }
+        .lightbox { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.8); 
+            justify-content: center; 
+            align-items: center; 
+        }
+        .lightbox img { 
+            max-width: 90%; 
+            max-height: 90%; 
+            border-radius: 10px; 
+            transition: opacity 0.3s; 
+        }
+        .lightbox img:hover {
+            opacity: 0.8;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .footer { background: #333; color: white; padding: 10px 0; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <a href="About.html">Home</a>
+            <a href="Discussion.html">Discussion</a>
+            <a href="Disease.html">Disease</a>
+            <a href="chatbot.html">Chatbot</a>
+        </div>
+        <div id="google_translate_element"></div>
+
+<div id="google_translate_element"></div>
+
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,hi,kn,te,ta,ml', // Added Tamil (ta) and Malayalam (ml)
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+
+    <h2>Silk Farming Image Gallery</h2>
+    <div class="gallery">
+        <img src="A.jpeg" alt="Silk Farming 1" onclick="openLightbox(this)">
+        <img src="B.jpeg" alt="Silk Farming 2" onclick="openLightbox(this)">
+        <img src="C.jpeg" alt="Silk Farming 3" onclick="openLightbox(this)">
+        <img src="D.jpeg" alt="Silk Farming 4" onclick="openLightbox(this)">
+        <img src="E.jpeg" alt="Silk Farming 5" onclick="openLightbox(this)">
+        <img src="F.jpeg" alt="Silk Farming 6" onclick="openLightbox(this)">
+        <img src="G.jpeg" alt="Silk Farming 7" onclick="openLightbox(this)">
+        <img src="H.jpeg" alt="Silk Farming 8" onclick="openLightbox(this)">
+        <img src="I.jpeg" alt="Silk Farming 9" onclick="openLightbox(this)">
+        <img src="J.jpeg" alt="Silk Farming 10" onclick="openLightbox(this)">
+        <img src="R.jpg" alt="Silk Farming 10" onclick="openLightbox(this)">
+        <img src="D.jpeg" alt="Silk Farming 10" onclick="openLightbox(this)">
+    </div>
+    
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" src="">
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Silk Farming. All rights reserved.</p>
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            document.getElementById('lightboxImg').src = img.src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

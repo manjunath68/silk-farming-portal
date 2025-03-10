@@ -1,0 +1,599 @@
+/* Global Styles */ 
+#image-gallery {
+    overflow: hidden;  /* Hide the overflowing images */
+    width: 100%; /* Make the gallery take up full width */
+}
+
+.gallery-container {
+    display: flex;
+    width: max-content; /* Ensure container width adapts to content */
+}
+
+.gallery-container img {
+    width: 300px; /* Set width for each image */
+    height: auto;
+    margin-right: 10px; /* Spacing between images */
+}
+
+/* Style for the user info in the top-right corner */
+.header-user {
+    float: right;
+    color: #4CAF50;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+#image-gallery {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to images */
+    gap: 10px; /* Space between images */
+    padding: 10px; /* Padding for the container */
+}
+
+.gallery-container img {
+    min-width: 300px; /* Set minimum width for images */
+    max-width: 100%; /* Responsive */
+    height: auto;
+    scroll-snap-align: start; /* Snap alignment */
+    border-radius: 8px; /* Rounded corners */
+}
+body {
+font-family: 'Roboto', Arial, sans-serif; /* Updated font to Roboto */
+background-color: #f0f8ff;
+color: #333;
+margin: 0;
+padding: 0;
+line-height: 1.6;
+}
+
+h1 {
+color: white; /* Set the color of the main title to white */
+text-align: center; /* Center align the title */
+}
+
+h2, h3 {
+color: #228B22;
+text-align: center;
+}
+
+/* Header Styles */
+header {
+background-color: #228b22;
+color: white;
+padding: 20px 0;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+list-style: none;
+padding: 0;
+text-align: center;
+}
+
+header nav ul li {
+display: inline;
+margin: 0 15px;
+}
+
+header nav ul li a {
+color: white;
+text-decoration: none;
+font-size: 18px;
+transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+color: #FFD700; /* Highlight on hover */
+}
+
+/* Section Styles */
+section {
+padding: 40px 20px;
+margin: 20px auto;
+max-width: 1200px;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+font-size: 28px;
+margin-bottom: 20px;
+border-bottom: 2px solid #228b22;
+display: inline-block;
+padding-bottom: 5px;
+}
+
+section h3 {
+font-size: 24px;
+margin-top: 20px;
+}
+
+section p, ul, li {
+font-size: 18px;
+margin-bottom: 10px;
+color: #555;
+}
+
+/* Highlighting Important Terms */
+p, li, h3 {
+font-weight: 400;
+}
+
+p span, li span {
+background-color: #ffeb3b;
+font-weight: bold;
+padding: 0 4px;
+border-radius: 4px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+p span:hover, li span:hover {
+background-color: #ffd700;
+color: #333;
+}
+
+/* Announcements Section */
+ul li {
+list-style-type: disc;
+margin-left: 20px;
+}
+
+ul li span {
+background-color: #f0e68c;
+padding: 5px 10px;
+border-radius: 4px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+/* Best Practices Section - Highlights */
+#best-practices h3 {
+color: #8B4513;
+border-left: 4px solid #FFD700;
+padding-left: 10px;
+transition: all 0.3s ease;
+}
+
+#best-practices h3:hover {
+color: #228B22;
+border-left-color: #228B22;
+}
+
+/* Button Styles */
+input[type="submit"] {
+background-color: #228b22;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+background-color: #FFD700;
+color: #333;
+}
+
+/* Forum Section - Links */
+#forum-content ul li a {
+text-decoration: none;
+color: #1E90FF;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+#forum-content ul li a:hover {
+color: #FF4500;
+text-decoration: underline;
+}
+
+/* Contact Form Styles */
+#contact-form input, #contact-form textarea {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: 2px solid #228b22;
+border-radius: 4px;
+font-size: 16px;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+border-color: #FFD700;
+outline: none;
+box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Footer Styles */
+footer {
+background-color: #228b22;
+color: white;
+text-align: center;
+padding: 10px 0;
+position: relative;
+bottom: 0;
+width: 100%;
+font-size: 14px;
+}
+
+footer p {
+margin: 0;
+}
+
+/* Animation for Section Visibility */
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+section {
+animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+header nav ul li {
+display: block;
+margin: 10px 0;
+}
+
+section {
+padding: 20px;
+}
+
+input[type="submit"] {
+width: 100%;
+}
+}
+/* Global Styles */ 
+#image-gallery {
+    overflow: hidden;  /* Hide the overflowing images */
+    width: 100%; /* Make the gallery take up full width */
+}
+
+.gallery-container {
+    display: flex;
+    width: max-content; /* Ensure container width adapts to content */
+}
+
+.gallery-container img {
+    width: 300px; /* Set width for each image */
+    height: auto;
+    margin-right: 10px; /* Spacing between images */
+}
+
+/* Style for the user info in the top-right corner */
+.header-user {
+    float: right;
+    color: #4CAF50;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+#image-gallery {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to images */
+    gap: 10px; /* Space between images */
+    padding: 10px; /* Padding for the container */
+}
+
+.gallery-container img {
+    min-width: 300px; /* Set minimum width for images */
+    max-width: 100%; /* Responsive */
+    height: auto;
+    scroll-snap-align: start; /* Snap alignment */
+    border-radius: 8px; /* Rounded corners */
+}
+body {
+font-family: 'Roboto', Arial, sans-serif; /* Updated font to Roboto */
+background-color: #f0f8ff;
+color: #333;
+margin: 0;
+padding: 0;
+line-height: 1.6;
+}
+
+h1 {
+color: white; /* Set the color of the main title to white */
+text-align: center; /* Center align the title */
+}
+
+h2, h3 {
+color: #228B22;
+text-align: center;
+}
+
+/* Header Styles */
+header {
+background-color: #228b22;
+color: white;
+padding: 20px 0;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+list-style: none;
+padding: 0;
+text-align: center;
+}
+
+header nav ul li {
+display: inline;
+margin: 0 15px;
+}
+
+header nav ul li a {
+color: white;
+text-decoration: none;
+font-size: 18px;
+transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+color: #FFD700; /* Highlight on hover */
+}
+
+/* Section Styles */
+section {
+padding: 40px 20px;
+margin: 20px auto;
+max-width: 1200px;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+font-size: 28px;
+margin-bottom: 20px;
+border-bottom: 2px solid #228b22;
+display: inline-block;
+padding-bottom: 5px;
+}
+
+section h3 {
+font-size: 24px;
+margin-top: 20px;
+}
+
+section p, ul, li {
+font-size: 18px;
+margin-bottom: 10px;
+color: #555;
+}
+
+/* Highlighting Important Terms */
+p, li, h3 {
+font-weight: 400;
+}
+
+p span, li span {
+background-color: #ffeb3b;
+font-weight: bold;
+padding: 0 4px;
+border-radius: 4px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+p span:hover, li span:hover {
+background-color: #ffd700;
+color: #333;
+}
+
+/* Announcements Section */
+ul li {
+list-style-type: disc;
+margin-left: 20px;
+}
+
+ul li span {
+background-color: #f0e68c;
+padding: 5px 10px;
+border-radius: 4px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+/* Best Practices Section - Highlights */
+#best-practices h3 {
+color: #8B4513;
+border-left: 4px solid #FFD700;
+padding-left: 10px;
+transition: all 0.3s ease;
+}
+
+#best-practices h3:hover {
+color: #228B22;
+border-left-color: #228B22;
+}
+
+/* Button Styles */
+input[type="submit"] {
+background-color: #228b22;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+background-color: #FFD700;
+color: #333;
+}
+
+/* Forum Section - Links */
+#forum-content ul li a {
+text-decoration: none;
+color: #1E90FF;
+font-weight: bold;
+transition: color 0.3s ease;
+}
+
+#forum-content ul li a:hover {
+color: #FF4500;
+text-decoration: underline;
+}
+
+/* Contact Form Styles */
+#contact-form input, #contact-form textarea {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: 2px solid #228b22;
+border-radius: 4px;
+font-size: 16px;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+border-color: #FFD700;
+outline: none;
+box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Footer Styles */
+footer {
+background-color: #228b22;
+color: white;
+text-align: center;
+padding: 10px 0;
+position: relative;
+bottom: 0;
+width: 100%;
+font-size: 14px;
+}
+
+footer p {
+margin: 0;
+}
+
+/* Animation for Section Visibility */
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+section {
+animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+header nav ul li {
+display: block;
+margin: 10px 0;
+}
+
+section {
+padding: 20px;
+}
+
+input[type="submit"] {
+width: 100%;
+}
+}
+.back-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.back-button i {
+    margin-right: 8px;
+    font-size: 24px; /* Adjust the icon size */
+}
+
+.back-button img {
+    width: 40px; /* Adjust the size of the image */
+    height: auto;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+/* Move translation dropdown to the top-right */
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Hide the Google Translate icon */
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* Increase dropdown size */
+.goog-te-gadget select {
+    font-size: 18px !important;
+    padding: 10px;
+    border-radius: 5px;
+}

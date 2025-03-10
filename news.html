@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Industry News and Updates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <div id="google_translate_element"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+             new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,kn,te,ta,ml', // Added Tamil (ta) and Malayalam (ml)
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #228b22;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .news-card h3 {
+            font-size: 1.5em;
+            margin: 0;
+            padding: 15px;
+            color: #333;
+            background-color: #e9e9e9;
+        }
+        .news-card p {
+            padding: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .news-card a {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #228b22;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-top: 1px solid #ddd;
+        }
+        .news-card a:hover {
+            background-color: #228b22;
+        }
+        .back-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .back-button a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            background-color: #228b22;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button a:hover {
+            background-color: #228b22;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+
+
+        /* Move translation dropdown to the top-right */
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Hide the Google Translate icon */
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* Increase dropdown size */
+.goog-te-gadget select {
+    font-size: 18px !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>News and Updates on Silk Farming</h1>
+    </header>
+    <main>
+        <section class="news-container">
+            <!-- News cards will be dynamically inserted here -->
+        </section>
+
+        <!-- Back to Home Button -->
+        <div class="back-button">
+            <a href="main.html" title="Back to Home">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+        <!-- End of Back to Home Button -->
+
+    </main>
+    <script>
+        // Array of news and updates
+        const silkNews = [
+            {
+                title: "Karnataka govt official website for Silk Farmers",
+                description: "This website will help in applying for new policies released by the government and others.",
+                link: "https://sericulture.karnataka.gov.in/english"
+            },
+            {
+                title: "National Portal of INDIA",
+                description: "Learn about modern sericulture techniques to improve silk quality and production efficiency.",
+                link: "https://www.india.gov.in/topics/agriculture/sericulture"
+            },
+            {
+                title: "Central Silk Board, Ministry of Textiles : Govt. of India",
+                description: "Stay updated with the latest trends and demands in the global silk market.",
+                link: "https://cmerti.res.in/sericulture-silk/"
+            },
+            {
+                title: "Diseases and pests of mulberry silkworm",
+                description: "Understand how to effectively manage and prevent diseases in silkworms.",
+                link: "https://silks.csb.gov.in/coochbehar/wp-content/themes/common_district/coochbehar/dpm-frame2.html#:~:text=Conduct%20strict%20mother%20moth%20examination,as%20per%20schedule%20and%20quantity."
+            }
+        ];
+
+        const newsContainer = document.querySelector('.news-container');
+
+        // Dynamically add news cards to the container
+        silkNews.forEach(news => {
+            const newsCard = document.createElement('div');
+            newsCard.classList.add('news-card');
+            newsCard.innerHTML = `
+                <h3>${news.title}</h3>
+                <p>${news.description}</p>
+                <a href="${news.link}" target="_blank">Read More</a>
+            `;
+            newsContainer.appendChild(newsCard);
+        });
+    </script>
+</body>
+</html>

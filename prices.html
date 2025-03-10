@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk Market Prices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <div id="google_translate_element"></div>
+
+    <script>
+        function googleTranslateElementInit() {
+             new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,hi,kn,te,ta,ml', // Added Tamil (ta) and Malayalam (ml)
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #228b22;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .market-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .market-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .market-card:hover {
+            transform: translateY(-5px);
+        }
+        .market-card h3 {
+            font-size: 1.5em;
+            margin: 0;
+            padding: 15px;
+            color: #333;
+            background-color: #e9e9e9;
+        }
+        .market-card p {
+            padding: 15px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .market-card span {
+            font-weight: bold;
+            color: #333;
+        }
+        .market-card .price {
+            font-size: 1.2em;
+            color: #4CAF50;
+        }
+        .market-card .date {
+            font-size: 0.9em;
+            color: #888;
+        }
+        .info-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .info-section h2 {
+            margin-bottom: 10px;
+        }
+        .info-section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #228b22;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button a:hover {
+            background-color: #1b6d1b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            margin-top: 20px;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+        /* Move translation dropdown to the top-right */
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+}
+
+/* Hide the Google Translate icon */
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Hide Google branding */
+.goog-logo-link {
+    display: none !important;
+}
+
+/* Increase dropdown size */
+.goog-te-gadget select {
+    font-size: 18px !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Present Market Prices of Silk</h1>
+    </header>
+    <main>
+        <!-- Market Prices Section -->
+        <section class="market-section">
+            <!-- Price cards will be dynamically inserted here -->
+        </section>
+
+        <!-- Govt. Anna Silk Exchange Table -->
+        <section>
+            <h2 style="text-align: center;">Raw Silk Price - Govt. Anna Silk Exchange, Kancheepuram</h2>
+            <p style="text-align: center;">Date: 25-02-2025 (Rate per Kg. - in Rs.)</p>
+
+            <table>
+                <tr>
+                    <th>S No</th>
+                    <th>Denier</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Avg</th>
+                </tr>
+                <tr><td>1</td><td>14/16</td><td>-</td><td>-</td><td>-</td></tr>
+                <tr><td>2</td><td>16/18</td><td>5100</td><td>5400</td><td>5234</td></tr>
+                <tr><td>3</td><td>18/20</td><td>5400</td><td>5400</td><td>5400</td></tr>
+                <tr><td>4</td><td>20/22</td><td>5250</td><td>5250</td><td>5250</td></tr>
+                <tr><td>5</td><td>22/24</td><td>4810</td><td>5230</td><td>5046</td></tr>
+                <tr><td>6</td><td>24/26</td><td>-</td><td>-</td><td>-</td></tr>
+                <tr><td>7</td><td>26/28</td><td>4640</td><td>4640</td><td>4640</td></tr>
+                <tr><td>8</td><td>HD</td><td>-</td><td>-</td><td>-</td></tr>
+            </table>
+        </section>
+
+        <!-- Device Type Pricing Table -->
+        <section>
+            <h2 style="text-align: center;">Device Type Pricing</h2>
+            <table>
+                <tr>
+                    <th>Device Type</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                    <th>Avg</th>
+                </tr>
+                <tr><td>Cottage Basin</td><td>-</td><td>-</td><td>-</td></tr>
+                <tr><td>MultiEnd</td><td>4640</td><td>5400</td><td>5044</td></tr>
+                <tr><td>ARM</td><td>-</td><td>-</td><td>-</td></tr>
+            </table>
+        </section>
+
+        <!-- Back to Home Button -->
+        <div class="back-button">
+            <a href="main.html" title="Back to Home">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Dynamic Market Prices
+        const silkPrices = [
+            { type: "Raw Silk", price: "₹4,200/kg", lastUpdated: "2024-12-30" },
+            { type: "Mulberry Silk", price: "₹3,800/kg", lastUpdated: "2024-12-30" },
+            { type: "Tasar Silk", price: "₹2,500/kg", lastUpdated: "2024-12-29" },
+            { type: "Eri Silk", price: "₹1,900/kg", lastUpdated: "2024-12-28" },
+            { type: "Muga Silk", price: "₹7,000/kg", lastUpdated: "2024-12-30" }
+        ];
+
+        const marketSection = document.querySelector('.market-section');
+
+        silkPrices.forEach(silk => {
+            const marketCard = document.createElement('div');
+            marketCard.classList.add('market-card');
+            marketCard.innerHTML = `
+                <h3>${silk.type}</h3>
+                <p>
+                    Current Price: <span class="price">${silk.price}</span><br>
+                    <span class="date">Last Updated: ${silk.lastUpdated}</span>
+                </p>
+            `;
+            marketSection.appendChild(marketCard);
+        });
+    </script>
+</body>
+</html>
